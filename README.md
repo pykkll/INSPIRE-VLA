@@ -9,6 +9,38 @@
 
 ---
 
+## ⚠️ Release Status / TODO
+
+> **This repository is currently a placeholder — nothing is runnable yet.**
+> It only provides the framework overview and environment-setup instructions.
+> The core implementation, training / inference code and model checkpoints are
+> **not yet released**, and will be made public **after the paper is accepted**.
+> All installation / training / evaluation commands below are therefore **for
+> reference only** and will not work with the current repository.
+
+### ✅ Released
+
+- [x] Repository skeleton and `README` with an overview of the paper
+- [x] Framework architecture figure (`assets/images/architecture.png`)
+- [x] Environment setup instructions (see [Getting Started](#getting-started))
+
+### ⬜ Not released yet
+
+- [ ] Core model code — Scene Context Expert (SCE) and Agent Interaction Expert (AIE)
+- [ ] LLM reasoning module (Qwen2.5-3B + LoRA) and the planning-token pipeline
+- [ ] Multi-modal CVAE planning expert
+- [ ] Two-stage training configs and launch scripts
+- [ ] Inference (open-loop) configs and the closed-loop agent
+- [ ] Pre-trained checkpoints
+- [ ] Data preparation and evaluation tooling
+- [ ] Qualitative visualization and analysis
+
+> **TODO (maintainer):** release the code and checkpoints above, then replace
+> the placeholder commands in `Training` / `Evaluation`, and fill in the
+> citation once the paper is published.
+
+---
+
 ## Abstract
 
 Vision-Language-Action (VLA) models have shown immense potential in autonomous
@@ -110,6 +142,10 @@ frameworks in all other tasks.
 
 
 ## Getting Started
+
+> **Note:** this section is a **placeholder** — the code is not released yet, so
+> the commands below cannot be executed with the current repository. See
+> [Release Status and TODO](#release-status-and-todo).
 
 ```bash
 git clone git@github.com:pykkll/INSPIRE-VLA.git
