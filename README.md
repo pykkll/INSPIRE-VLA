@@ -9,7 +9,7 @@
 
 ---
 
-## ⚠️ Release Status / TODO
+## Release Status and TODO
 
 > **This repository is currently a placeholder — nothing is runnable yet.**
 > It only provides the framework overview and environment-setup instructions.
