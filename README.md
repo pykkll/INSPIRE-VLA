@@ -11,33 +11,40 @@
 
 ## Release Status and TODO
 
-> **This repository is currently a placeholder — nothing is runnable yet.**
-> It only provides the framework overview and environment-setup instructions.
-> The core implementation, training / inference code and model checkpoints are
-> **not yet released**, and will be made public **after the paper is accepted**.
-> All installation / training / evaluation commands below are therefore **for
-> reference only** and will not work with the current repository.
+> **This repository is currently a placeholder — the code is not runnable yet.**
+> So far it only provides the framework overview, the environment-setup
+> instructions, and the data / evaluation setup (both based on public
+> resources). Our **training code, inference code and pre-trained checkpoints
+> are not yet released**, and will be made public **after the paper is
+> accepted**. The installation / training / evaluation commands below are
+> therefore **for reference only** and will not work with the current
+> repository.
+>
+> Note that the **backbone weights are already public** and can be downloaded
+> right away — the LLM
+> ([Qwen2.5-3B](https://huggingface.co/Qwen/Qwen2.5-3B)) and the vision encoder
+> ([EVA-02](https://github.com/NVlabs/OmniDrive/tree/main)). See
+> [Data and Weights Preparation](#data-and-weights-preparation).
 
-### ✅ Released
+### ✅ Already available
 
 - [x] Repository skeleton and `README` with an overview of the paper
 - [x] Framework architecture figure (`assets/images/architecture.png`)
 - [x] Environment setup instructions (see [Getting Started](#getting-started))
+- [x] Backbone weights — LLM `Qwen2.5-3B` and vision encoder `EVA-02` (public downloads)
+- [x] Data preparation and evaluation tooling — the public
+      [Bench2Drive](https://github.com/Thinklab-SJTU/Bench2Drive) /
+      [Bench2DriveZoo](https://github.com/Thinklab-SJTU/Bench2DriveZoo) toolchain
 
 ### ⬜ Not released yet
 
-- [ ] Core model code — Scene Context Expert (SCE) and Agent Interaction Expert (AIE)
-- [ ] LLM reasoning module (Qwen2.5-3B + LoRA) and the planning-token pipeline
-- [ ] Multi-modal CVAE planning expert
-- [ ] Two-stage training configs and launch scripts
-- [ ] Inference (open-loop) configs and the closed-loop agent
-- [ ] Pre-trained checkpoints
-- [ ] Data preparation and evaluation tooling
-- [ ] Qualitative visualization and analysis
+- [ ] **Training code** — model implementation and the two-stage training configs / scripts
+- [ ] **Inference code** — open-loop configs and the closed-loop agent
+- [ ] **Pre-trained checkpoints** — our trained model
 
-> **TODO (maintainer):** release the code and checkpoints above, then replace
-> the placeholder commands in `Training` / `Evaluation`, and fill in the
-> citation once the paper is published.
+> **TODO (maintainer):** release the three items above, then un-comment the real
+> commands in `Training` / `Evaluation`, and fill in the citation once the paper
+> is published.
 
 ---
 
@@ -217,7 +224,9 @@ for 6 epochs.
 ./adzoo/inspire/inspire_dist_eval.sh adzoo/inspire/configs/inspire_stage3_infer.py [CHECKPOINT] 1
 ```
 
-
+We recommend **FP32** inference on an NVIDIA A100 or other GPUs with more than
+**32GB** of memory. **FP16** inference is also supported and achieves almost the
+same performance (requires > **17GB** of memory):
 
 ```bash
 ./adzoo/inspire/inspire_dist_eval.sh adzoo/inspire/configs/inspire_stage3_fp16.py [CHECKPOINT] 1
