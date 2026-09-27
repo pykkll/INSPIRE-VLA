@@ -224,9 +224,6 @@ for 6 epochs.
 ./adzoo/inspire/inspire_dist_eval.sh adzoo/inspire/configs/inspire_stage3_infer.py [CHECKPOINT] 1
 ```
 
-We recommend **FP32** inference on an NVIDIA A100 or other GPUs with more than
-**32GB** of memory. **FP16** inference is also supported and achieves almost the
-same performance (requires > **17GB** of memory):
 
 ```bash
 ./adzoo/inspire/inspire_dist_eval.sh adzoo/inspire/configs/inspire_stage3_fp16.py [CHECKPOINT] 1
